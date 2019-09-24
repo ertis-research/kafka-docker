@@ -6,6 +6,7 @@
 
 kafka-docker
 ============
+### Fork for enabling running Kakfa in Docker on Raspberry Pi
 
 Dockerfile for [Apache Kafka](http://kafka.apache.org/)
 
