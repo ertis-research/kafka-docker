@@ -1,4 +1,4 @@
-FROM openjdk:8u212-jre-alpine
+FROM arm32v7/alpine
 
 ARG kafka_version=2.3.0
 ARG scala_version=2.12
@@ -23,6 +23,8 @@ ENV KAFKA_VERSION=$kafka_version \
 ENV PATH=${PATH}:${KAFKA_HOME}/bin
 
 COPY download-kafka.sh start-kafka.sh broker-list.sh create-topics.sh versions.sh /tmp/
+
+RUN apk --update add openjdk8-jre
 
 RUN apk add --no-cache bash curl jq docker \
  && chmod a+x /tmp/*.sh \
